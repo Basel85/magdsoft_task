@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:magdsoft_task/presentation/responsiveness/size_config.dart';
-import 'package:magdsoft_task/presentation/styles/colors.dart';
 import 'package:magdsoft_task/presentation/styles/text_styles.dart';
 import 'package:magdsoft_task/presentation/view/shared/background_by_linear_gradient.dart';
 import 'package:magdsoft_task/presentation/view/shared/custom_button.dart';

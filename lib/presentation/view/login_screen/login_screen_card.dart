@@ -30,7 +30,7 @@ class _LoginScreenCardState extends State<LoginScreenCard> {
       await AuthenticationCubit.get(context).loginUserByPhoneNumber(
           _fullNameController.text, _phoneNumberController.text);
     } catch (_) {
-      AuthenticationCubit.get(context).alertThatUnknownErrorHappened();
+      AuthenticationCubit.get(context).alertThatUnknownErrorHappenedwhileLogining();
     }
     }
   }
@@ -39,21 +39,21 @@ class _LoginScreenCardState extends State<LoginScreenCard> {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationCubit, AuthenticationState>(
       listener: (context, state) {
-        if (state is AuthenticationLoading) {
+        if (state is AuthenticationLoginLoading) {
           showProgressDialog(context);
-        } else if (state is AuthenticationSuccess) {
+        } else if (state is AuthenticationLoginSuccess) {
           Navigator.pop(context);
           Fluttertoast.showToast(msg: "${state.successMessage} and your otp code is ${state.code}",toastLength: Toast.LENGTH_LONG);
-          Navigator.pushNamedAndRemoveUntil(context, '/verify', (route) => false,arguments: {'fullname':_fullNameController.text,'phonenumber':_phoneNumberController.text});
-        } else if (state is AuthenticationFailure) {
+          Navigator.pushNamedAndRemoveUntil(context, '/verify', (route) => false,arguments: {'fullname':_fullNameController.text,'phonenumber':_phoneNumberController.text,'code':state.code});
+        } else if (state is AuthenticationLoginFailure) {
           Navigator.pop(context);
           Fluttertoast.showToast(msg: state.errorMessage,toastLength: Toast.LENGTH_LONG);
         }
       },
       listenWhen: (previous, current) =>
-          current is AuthenticationLoading ||
-          current is AuthenticationSuccess ||
-          current is AuthenticationFailure,
+          current is AuthenticationLoginLoading ||
+          current is AuthenticationLoginSuccess ||
+          current is AuthenticationLoginFailure,
       child: Container(
         width: SizeConfig.getPartOfWidth(372).w,
         height: SizeConfig.getPartOfHeight(345).h,

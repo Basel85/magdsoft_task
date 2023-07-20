@@ -11,7 +11,6 @@ class LoginRequest {
     Response response = await HttpHelper.postData(
         url: verifyPhone, body: {"phone": phonenumber, "name": fullname});
     Map<String, dynamic> dataInJson = json.decode(response.body);
-    print(dataInJson);
     return LoginResponse.fromJson(dataInJson);
   }
 }

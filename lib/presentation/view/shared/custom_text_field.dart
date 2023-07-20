@@ -28,26 +28,23 @@ class CustomTextField extends StatelessWidget {
           )
         ],
       ),
-      child: Container(
-        color: Colors.red,
-        child: TextFormField(
-          controller: controller,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'The field is required';
-            }
-            return null;
-          },
-          textDirection: TextDirection.ltr,
-          textAlign: TextAlign.start,
-            decoration: InputDecoration(
-          hintText: hintText,
-          errorStyle: AppTextStyle.colorRedfamilyInterWeightw400Size10,
-          hintStyle: AppTextStyle.familyInterWeightw400Size10,
-          hintTextDirection: TextDirection.ltr,
-          border: const OutlineInputBorder(borderSide: BorderSide.none),
-        )),
-      ),
+      child: TextFormField(
+        controller: controller,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'The field is required';
+          }
+          return null;
+        },
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.start,
+          decoration: InputDecoration(
+        hintText: hintText,
+        errorStyle: AppTextStyle.colorRedFamilyInterWeightw400Size10,
+        hintStyle: AppTextStyle.familyInterWeightw400Size10,
+        hintTextDirection: TextDirection.ltr,
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+      )),
     );
   }
 }

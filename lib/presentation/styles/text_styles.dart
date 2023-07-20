@@ -34,11 +34,24 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle colorRedfamilyInterWeightw400Size10 = TextStyle(
+  static TextStyle colorRedFamilyInterWeightw400Size10 = TextStyle(
     color: Colors.red,
     fontSize: 10.sp,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
     
   );
+
+  static TextStyle colorWhiteFamilyInterWeightw400Size30 =  TextStyle(
+color: AppColor.white,
+fontSize: 30.sp,
+fontFamily: 'Inter',
+fontWeight: FontWeight.w400,
+);
+  static TextStyle colorSecondBlueFamilyInterWeightw400Size20  = TextStyle(
+color: AppColor.secondBlueColor,
+fontSize: 20.sp,
+fontFamily: 'Inter',
+fontWeight: FontWeight.w400,
+);
 }

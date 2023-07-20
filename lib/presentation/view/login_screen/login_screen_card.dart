@@ -43,11 +43,11 @@ class _LoginScreenCardState extends State<LoginScreenCard> {
           showProgressDialog(context);
         } else if (state is AuthenticationSuccess) {
           Navigator.pop(context);
-          Fluttertoast.showToast(msg: state.successMessage);
-          debugPrint(state.code.toString());
+          Fluttertoast.showToast(msg: "${state.successMessage} and your otp code is ${state.code}",toastLength: Toast.LENGTH_LONG);
+          Navigator.pushNamedAndRemoveUntil(context, '/verify', (route) => false,arguments: {'fullname':_fullNameController.text,'phonenumber':_phoneNumberController.text});
         } else if (state is AuthenticationFailure) {
           Navigator.pop(context);
-          Fluttertoast.showToast(msg: state.errorMessage);
+          Fluttertoast.showToast(msg: state.errorMessage,toastLength: Toast.LENGTH_LONG);
         }
       },
       listenWhen: (previous, current) =>
@@ -112,11 +112,19 @@ class _LoginScreenCardState extends State<LoginScreenCard> {
               CustomButton(
                 buttonText: "Login",
                 onTap: login,
+                width: SizeConfig.getPartOfWidth(282).w,
+                height: SizeConfig.getPartOfHeight(48.01).h,
               )
             ],
           ),
         ),
       ),
     );
+  }
+  @override
+  dispose() {
+      _fullNameController.dispose();
+      _phoneNumberController.dispose();
+      super.dispose();
   }
 }

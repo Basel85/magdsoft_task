@@ -23,7 +23,7 @@ class AuthenticationButton extends StatelessWidget {
             ),
             shadows: [
               BoxShadow(
-                color: AppColor.authenticationButtonShadowColor,
+                color: AppColor.firstBlackColor,
                 blurRadius: 20,
                 offset: Offset(SizeConfig.getPartOfWidth(2).w,
                     SizeConfig.getPartOfHeight(5).h),

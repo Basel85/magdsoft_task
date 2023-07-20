@@ -12,7 +12,7 @@ class SplashScreenElipse5 extends StatelessWidget {
       width: SizeConfig.getPartOfWidth(246).w,
       height: SizeConfig.getPartOfHeight(271).h,
       decoration: const ShapeDecoration(
-        color: AppColor.splashScreenBackgroundColor,
+        color: AppColor.secondBlueColor,
         shape: OvalBorder(),
       ),
     );

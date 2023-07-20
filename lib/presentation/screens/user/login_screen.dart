@@ -4,6 +4,7 @@ import 'package:magdsoft_task/presentation/styles/colors.dart';
 import 'package:magdsoft_task/presentation/styles/text_styles.dart';
 import 'package:magdsoft_task/presentation/view/login_screen/login_screen_background_image.dart';
 import 'package:magdsoft_task/presentation/view/login_screen/login_screen_background_image_color.dart';
+import 'package:magdsoft_task/presentation/view/login_screen/login_screen_card.dart';
 import 'package:magdsoft_task/presentation/view/login_screen/login_screen_or_component.dart';
 import 'package:magdsoft_task/presentation/view/shared/authentication_button.dart';
 import 'package:sizer/sizer.dart';
@@ -44,6 +45,7 @@ class LoginScreen extends StatelessWidget {
       Positioned(
          bottom: SizeConfig.getPartOfHeight(120).h,
          left: SizeConfig.getPartOfWidth(109).w,
+         
          child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
          crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,24 +65,7 @@ fit: BoxFit.fill,
 ),))),
          ]),
       ),
-      Positioned(left: SizeConfig.getPartOfWidth(29).w,top: SizeConfig.getPartOfHeight(193).h,child: Container(
-    width: 372,
-    height: 345,
-    decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-        ),
-        shadows: [
-            BoxShadow(
-                color: Color(0x3F000000),
-                blurRadius: 20,
-                offset: Offset(2, 5),
-                spreadRadius: 5,
-            )
-        ],
-    ),
-),)
+      Positioned(left: SizeConfig.getPartOfWidth(29).w,top: SizeConfig.getPartOfHeight(193).h,child: const LoginScreenCard())
           ],
         ),
       ),

@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
-import 'package:magdsoft_task/presentation/responsiveness/size_config.dart';
-import 'package:magdsoft_task/presentation/styles/colors.dart';
-import 'package:sizer/sizer.dart';
 
 class LineComponent extends StatelessWidget {
-  const LineComponent({super.key});
+  final double height;
+  final double width;
+  final Color color;
+  const LineComponent({super.key, required this.height, required this.width, required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.getPartOfWidth(165).w,
-      height: SizeConfig.getPartOfHeight(1).h,
+      width: width,
+      height: height,
       decoration: ShapeDecoration(
-        color: AppColor.orComponentColor,
+        color: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),

@@ -11,7 +11,6 @@ showToast(String? text) {
     ),
     child: Text(text!),
   );
-
   fToast.showToast(
     child: toast,
     gravity: ToastGravity.TOP,

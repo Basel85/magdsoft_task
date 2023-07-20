@@ -5,7 +5,6 @@ import 'package:sizer/sizer.dart';
 
 class LoginScreenBackgroundImage extends StatelessWidget {
   const LoginScreenBackgroundImage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(

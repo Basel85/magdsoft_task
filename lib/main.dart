@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:intl/intl.dart';
+import 'package:magdsoft_task/business_logic/authentication_cubit/authentication_cubit.dart';
 import 'package:magdsoft_task/business_logic/bloc_observer.dart';
 import 'package:magdsoft_task/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_task/presentation/router/app_router.dart';
@@ -72,6 +73,9 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider(
           create: ((context) => GlobalCubit()),
+        ),
+        BlocProvider(
+          create: ((context) => AuthenticationCubit()),
         ),
       ],
       child: BlocConsumer<GlobalCubit, GlobalState>(

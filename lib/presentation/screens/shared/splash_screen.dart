@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         clipBehavior: Clip.antiAlias,
-        decoration: const BoxDecoration(color: AppColor.splashScreenBackgroundColor),
+        decoration: const BoxDecoration(color: AppColor.secondBlueColor),
         child: Stack(
           children: [
             Positioned(

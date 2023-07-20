@@ -11,7 +11,7 @@ class LoginScreenBackgroundImageColor extends StatelessWidget {
     return Container(
       width: SizeConfig.getPartOfWidth(430).w,
       height: SizeConfig.getPartOfHeight(386).h,
-      decoration: const BoxDecoration(color: AppColor.loginScreenBackgroundImageColor),
+      decoration: const BoxDecoration(color: AppColor.thirdBlueColor),
     );
   }
 }

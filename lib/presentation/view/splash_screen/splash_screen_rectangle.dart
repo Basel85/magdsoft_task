@@ -14,7 +14,7 @@ class SplashScreenRectangle extends StatelessWidget {
         width: SizeConfig.getPartOfWidth(95).w,
         height: SizeConfig.getPartOfHeight(389).h,
         decoration: ShapeDecoration(
-          color: AppColor.splashScreenRectangleColor,
+          color: AppColor.firstBlueColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
